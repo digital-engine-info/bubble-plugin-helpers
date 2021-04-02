@@ -1,7 +1,7 @@
 /*!
  * 
- *   @nabellaleen/bubble-plugin-helpers v1.0.38
- *   https://github.com/nabellaleen/bubble-plugin-helpers
+ *   @digital-engine/bubble-plugin-helpers v1.0.0
+ *   https://github.com/digital-engine-info/bubble-plugin-helpers
  *
  *   Copyright (c) Florian Briand (https://github.com/nabellaleen) and project contributors.
  *
