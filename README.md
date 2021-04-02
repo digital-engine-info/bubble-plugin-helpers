@@ -1,64 +1,34 @@
  <div align="center">
- <img align="center" width="230" src="https://i.imgur.com/iHgtvmg.png" />
-  <h2>Typescript Library Boilerplate Basic</h2>
-  <blockquote>Minimal Library Starter Kit for your Typescript projects</blockquote>
+ <img align="center" width="230" src="https://i.postimg.cc/HWqPfvjD/Bubble-Plugin-Helpers.png" />
+  <h2>Bubble Plugin helpers</h2>
+  <blockquote>Helpers to easily build bubble.io plugins</blockquote>
  
- <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"><img alt="Build Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"> <img alt="Publish Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Publish/badge.svg?color=green" /></a> <img src="https://img.shields.io/david/hodgef/ts-library-boilerplate-basic.svg" /> <a href="https://david-dm.org/hodgef/ts-library-boilerplate-basic?type=dev"><img src="https://img.shields.io/david/dev/hodgef/ts-library-boilerplate-basic.svg" /></a> <img src="https://api.dependabot.com/badges/status?host=github&repo=hodgef/ts-library-boilerplate-basic" />
- 
-<strong>For a plain Javascript alternative, check out [js-library-boilerplate-basic](https://github.com/hodgef/js-library-boilerplate-basic).</strong>
-
+ <a href="https://github.com/nabellaleen/bubble-plugin-helpers/actions"><img alt="Build Status" src="https://github.com/nabellaleen/bubble-plugin-helpers/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/nabellaleen/bubble-plugin-helpers/actions"> <img alt="Publish Status" src="https://github.com/nabellaleen/bubble-plugin-helpers/workflows/Publish/badge.svg?color=green" /></a> <img src="https://img.shields.io/david/nabellaleen/bubble-plugin-helpers.svg" /> <a href="https://david-dm.org/nabellaleen/bubble-plugin-helpers?type=dev"><img src="https://img.shields.io/david/dev/nabellaleen/bubble-plugin-helpers.svg" /></a> <img src="https://api.dependabot.com/badges/status?host=github&repo=nabellaleen/bubble-plugin-helpers" />
 </div>
 
 ## ⭐️ Features
 
-- Webpack 5
-- Babel 7
-- Hot reloading (`npm start`)
-- Automatic Types file generation (index.d.ts)
-- UMD exports, so your library works everywhere.
-- Jest unit testing
-- Daily [dependabot](https://dependabot.com) dependency updates
+- Object : handle more easily data objects and their relations
+- Debug : functions supporting debug tasks for your plugins, like logging efficiently the objects you are handling
+- Mock : easily mock objects used in bubble plugins, very usefull for implementing unit tests
 
 ## 📦 Getting Started
 
+### In your plugin's elements and client side actions
+
+Add the following to the `Shared / HTML Header` section :
 ```
-git clone https://github.com/hodgef/ts-library-boilerplate-basic.git myLibrary
-npm install
-```
-
-## 💎 Customization
-
-> Before shipping, make sure to:
-
-1. Edit `LICENSE` file
-2. Edit `package.json` information (These will be used to generate the headers for your built files)
-3. Edit `library: "MyLibrary"` with your library's export name in `./webpack.config.js`
-
-## 🚀 Deployment
-
-1. `npm publish`
-2. Your users can include your library as usual
-
-### npm
-
-```
-import MyLibrary from 'my-library';
-const libraryInstance = new MyLibrary();
-...
+<script src="" />
 ```
 
-### self-host/cdn
+### In your plugin's server side actions
 
+- Activate the `This action uses node modules` checkbox in your action configuration (at the bottom of the page)
+- Add this library to the newly opened section, respecting the standard package.json format :
 ```
-<script src="build/index.js"></script>
-
-const MyLibrary = window.MyLibrary.default;
-const libraryInstance = new MyLibrary();
-...
+{
+  "dependencies": {
+    "@nabellaleen/bubble-plugin-helpers": "^1.0.38"
+  }
+}
 ```
-
-## ✅ Libraries built with this boilerplate
-
-> Made a library using this starter kit? Share it here by [submitting a pull request](https://github.com/hodgef/ts-library-boilerplate-basic/pulls)!
-
-- [simple-keyboard@3.0.0](https://github.com/hodgef/simple-keyboard/tree/staging) - Javascript Virtual Keyboard

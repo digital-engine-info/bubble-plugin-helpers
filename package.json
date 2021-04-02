@@ -1,6 +1,6 @@
 {
   "name": "@nabellaleen/bubble-plugin-helpers",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "Helpers for building Bubble.io plugins",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",

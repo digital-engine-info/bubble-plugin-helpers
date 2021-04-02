@@ -1,5 +1,10 @@
-import MyLibrary from "../index";
+import { BubbleHelpers } from "../index";
 
-it("Runs without crashing", () => {
-  new MyLibrary();
+test("Runs without crashing", () => {
+  new BubbleHelpers();
 });
+
+// test("Get debugging info", () => {
+//   const bubbleElement = new ObjectMock(objectBuilder)
+//   expect(getDebugInfo())
+// })

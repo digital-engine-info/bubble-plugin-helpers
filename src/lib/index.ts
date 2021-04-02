@@ -1,6 +1,8 @@
-import "./index.css";
+export * from "./mock";
+export * from "./object";
+export * from "./debug";
 
-class MyLibrary {
+export class BubbleHelpers {
   constructor() {
     console.log("Library constructor loaded");
   }
@@ -11,4 +13,4 @@ class MyLibrary {
   };
 }
 
-export default MyLibrary;
+export default BubbleHelpers;
