@@ -10,7 +10,12 @@
     "build:demo": "webpack --config webpack.config.demo.js",
     "test": "jest --silent",
     "coverage": "npm run test -- --coverage",
-    "prepare": "npm run build",
+    "prepare": "husky install && npm run build",
+    "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+    "commit-msg": "commitlint --edit $1",
+    "release": "npm run build && standard-version -a -n --header \"# Changelog\n\nAll notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.\n\n## Versions\"",
+    "release:dry": "standard-version --dry-run",
+    "changelog:latest": "rexreplace \"^.*?#+\\s\\[.*?\n.*?(?=\\s*#+\\s\\[)\" \"_\" -s -M -G -m -o \"CHANGELOG.md\" | tail -n +7 > CHANGELOG-LATEST.md",
     "trypublish": "npm publish || true"
   },
   "repository": {
@@ -36,21 +41,28 @@
     "@babel/plugin-transform-typescript": "^7.13.0",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.13.12",
+    "@commitlint/cli": "12.1.1",
+    "@commitlint/config-conventional": "12.1.1",
     "@types/jest": "^26.0.22",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-preset-minify": "^0.5.0",
+    "commitizen": "4.2.3",
     "css-loader": "^5.2.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.23.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
+    "husky": "6.0.0",
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.4.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "prettier": "^2.2.1",
     "prettier-webpack-plugin": "^1.2.0",
+    "rexreplace": "6.1.1",
+    "standard-version": "9.1.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
     "typescript": "^4.2.3",
@@ -97,5 +109,15 @@
       "jsx",
       "node"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "npx replace \"`npx standard-version --dry-run | sed -e '1!d' -e 's/.*from //g' -e 's/ to .*//g'`\" \"`npx standard-version --dry-run | sed -e '1!d' -e 's/.*to //g'`\" README.md"
+    }
   }
 }

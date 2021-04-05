@@ -4,6 +4,7 @@
   <blockquote>Helpers to easily build bubble.io plugins</blockquote>
  
  <a href="https://github.com/nabellaleen/bubble-plugin-helpers/actions"><img alt="Build Status" src="https://github.com/nabellaleen/bubble-plugin-helpers/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/nabellaleen/bubble-plugin-helpers/actions"> <img alt="Publish Status" src="https://github.com/nabellaleen/bubble-plugin-helpers/workflows/Publish/badge.svg?color=green" /></a> <img src="https://img.shields.io/david/nabellaleen/bubble-plugin-helpers.svg" /> <a href="https://david-dm.org/nabellaleen/bubble-plugin-helpers?type=dev"><img src="https://img.shields.io/david/dev/nabellaleen/bubble-plugin-helpers.svg" /></a> <img src="https://api.dependabot.com/badges/status?host=github&repo=nabellaleen/bubble-plugin-helpers" />
+ <a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" /></a>
 </div>
 
 ## ⭐️ Features
@@ -18,7 +19,7 @@
 
 Add the following to the `Shared / HTML Header` section :
 ```
-<script src="" />
+<script type="application/javascript" src="https://unpkg.com/@digital-engine/bubble-plugin-helpers@1.0.0/build/index.js" />
 ```
 
 ### In your plugin's server side actions
@@ -28,7 +29,7 @@ Add the following to the `Shared / HTML Header` section :
 ```
 {
   "dependencies": {
-    "@nabellaleen/bubble-plugin-helpers": "^1.0.38"
+    "@nabellaleen/bubble-plugin-helpers": "^1.0.0"
   }
 }
 ```
