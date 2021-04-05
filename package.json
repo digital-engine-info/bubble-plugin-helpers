@@ -1,6 +1,6 @@
 {
   "name": "@digital-engine/bubble-plugin-helpers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Helpers for building Bubble.io plugins",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
