@@ -19,7 +19,7 @@
 
 Add the following to the `Shared / HTML Header` section :
 ```
-<script type="application/javascript" src="https://unpkg.com/@digital-engine/bubble-plugin-helpers@1.0.3/build/index.js" />
+<script type="application/javascript" src="https://unpkg.com/@digital-engine/bubble-plugin-helpers@1.0.4/build/index.js" />
 ```
 
 ### In your plugin's server side actions
@@ -29,7 +29,7 @@ Add the following to the `Shared / HTML Header` section :
 ```
 {
   "dependencies": {
-    "@digital-engine/bubble-plugin-helpers": "^1.0.3"
+    "@digital-engine/bubble-plugin-helpers": "^1.0.4"
   }
 }
 ```
