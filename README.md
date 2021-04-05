@@ -29,7 +29,7 @@ Add the following to the `Shared / HTML Header` section :
 ```
 {
   "dependencies": {
-    "@nabellaleen/bubble-plugin-helpers": "^1.0.3"
+    "@digital-engine/bubble-plugin-helpers": "^1.0.3"
   }
 }
 ```
